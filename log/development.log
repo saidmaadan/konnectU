@@ -1,0 +1,17 @@
+Started GET "/" for 127.0.0.1 at 2017-11-17 23:06:26 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 277ms (Views: 7.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-17 23:06:31 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-17 23:06:32 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "MessagesChannel"
+Subscription class not found: "NotificationsChannel"
+Started GET "/cable" for 127.0.0.1 at 2017-11-17 23:07:03 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-17 23:07:03 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "NotificationsChannel"
+Subscription class not found: "MessagesChannel"
