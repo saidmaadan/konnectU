@@ -15,3 +15,220 @@ Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-17 23:07:03 -0600
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 Subscription class not found: "NotificationsChannel"
 Subscription class not found: "MessagesChannel"
+Started GET "/cable" for 127.0.0.1 at 2017-11-17 23:27:10 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-17 23:27:10 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "MessagesChannel"
+Subscription class not found: "NotificationsChannel"
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:27:13 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12476ms (Views: 12451.2ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-17 23:28:23 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-17 23:28:23 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Subscription class not found: "MessagesChannel"
+Subscription class not found: "NotificationsChannel"
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:31:45 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 131ms (Views: 125.8ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:34:00 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 2315ms (Views: 2311.9ms)
+
+
+Started GET "/pages/sass.html" for 127.0.0.1 at 2017-11-17 23:34:30 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/pages/sass.html"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:34:37 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 147ms (Views: 143.9ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:38:02 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.7ms)
+  Rendered shared/_nav.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 143ms (Views: 140.5ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:47:39 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 500 Internal Server Error in 275ms
+
+
+  
+SyntaxError (/Users/sm/code/projects/RubyOnRails/konnectU/app/views/shared/_footer.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+to "About Us" pages_about_path, class: "grey-text text-light
+                              ^):
+  
+app/views/shared/_footer.html.erb:22: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb___1093675529992557693_70213291350280'
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:47:59 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (8.0ms)
+Completed 200 OK in 347ms (Views: 343.8ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:49:02 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 86ms (Views: 82.1ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:49:38 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 79ms (Views: 76.6ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:50:14 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.3ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 60ms (Views: 58.7ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:50:30 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 84ms (Views: 81.0ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:51:05 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 361ms (Views: 357.3ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:51:09 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 278ms (Views: 275.0ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:56:00 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 159ms (Views: 155.7ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:56:05 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 112ms (Views: 109.9ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:57:41 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.2ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 70ms (Views: 67.3ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-17 23:59:44 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (1.9ms)
+Completed 200 OK in 193ms (Views: 186.9ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-18 00:03:34 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered shared/_nav.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 216ms (Views: 211.9ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-18 00:03:41 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.6ms)
+  Rendered shared/_nav.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (29.7ms)
+Completed 200 OK in 255ms (Views: 250.5ms)
+
+
