@@ -51,3 +51,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise', '~> 4.3'
+gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
