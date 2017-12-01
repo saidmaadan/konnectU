@@ -426,3 +426,496 @@ Processing by PagesController#about as HTML
 Completed 200 OK in 89ms (Views: 83.9ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 21:57:41 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.3ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 85ms (Views: 81.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 21:58:08 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.9ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 84ms (Views: 81.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 21:59:13 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.7ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (1.5ms)
+Completed 200 OK in 103ms (Views: 99.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 21:59:29 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.2ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 81ms (Views: 78.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 21:59:32 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.5ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 87ms (Views: 84.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 21:59:46 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.9ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 95ms (Views: 90.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 22:00:19 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.4ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 136ms (Views: 133.2ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7857623001116905275)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNameToUsers (20171201041424)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171201041424"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7857623001116905275)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-30 22:40:08 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Gl7rqeaifYb7IwbT7NjMdj37UBJMIn1bdazMrbnRg+JZ79dhY121+Mup7TqxK1WgpaAIgHfrvgaVlEQUcFPxvQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 3.6ms)
+
+
+  
+NameError (undefined local variable or method `sign_up' for #<Devise::SessionsController:0x007fac0c8e2f00>
+Did you mean?  sign_out
+               sign_in):
+  
+app/controllers/application_controller.rb:9:in `configure_permitted_parameters'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-30 22:41:09 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Gl7rqeaifYb7IwbT7NjMdj37UBJMIn1bdazMrbnRg+JZ79dhY121+Mup7TqxK1WgpaAIgHfrvgaVlEQUcFPxvQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.8ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x007fac0bd63738>):
+  
+app/controllers/application_controller.rb:9:in `configure_permitted_parameters'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-30 22:41:43 -0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-30 22:41:43 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.8ms)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 22:41:55 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (2.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 83ms (Views: 77.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-30 22:42:11 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6Y3hLgFt5WkQck9iYXeAak7esOv4GzrQ/miC6B9QW/mqPN3mhJItFyD4pIs8hBm81oXoecPS+Y0eUApR1tIppg=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 4.3ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x007fce58305330>):
+  
+app/controllers/application_controller.rb:9:in `configure_permitted_parameters'
+Started GET "/" for 127.0.0.1 at 2017-11-30 22:42:20 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.5ms)
+Completed 200 OK in 23ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 22:42:26 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.3ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 448ms (Views: 440.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-30 22:42:31 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FFL4hwNHt98/HsETq+n7qw4KgrKeziB8mA9l15tYOLFX48RPhrh/oQ+UKvr2GmJ9llHaIKUH4yF4N+1uUtpK7g=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x007fce5645c5a0>):
+  
+app/controllers/application_controller.rb:9:in `configure_permitted_parameters'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "name" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2017-12-01 04:52:41.753504"], ["name", "Said Maadan"], ["id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2017-11-30 22:53:11 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 22:54:36 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (26.5ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 155ms (Views: 142.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 22:55:56 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (4.9ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 129ms (Views: 121.7ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-30 22:56:00 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kot7s31g+qGa2afGH4OMRfGDBNVP+e29MXDOzKHwRc7ROkd7+J8y36pTTC9CcBWTadhcR3QwLuDRSEZ1aHI3kQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x007fce55f63170>):
+  
+app/controllers/application_controller.rb:9:in `configure_permitted_parameters'
+Started GET "/login" for 127.0.0.1 at 2017-11-30 22:58:11 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-30 22:58:22 -0600
+Processing by Devise::SessionsController#new as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x007fce55c98af8>):
+  
+app/controllers/application_controller.rb:9:in `configure_permitted_parameters'
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 23:02:38 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (25.2ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 500ms (Views: 482.1ms | ActiveRecord: 5.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-30 23:02:46 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cBH5i8dSk0A1r04haDNG7q/B11A6nZFijW9zM2xsagAzoMVDQq1bPgUlpcg1wN84N5qPwgFUUj9tV/uKpe4YXw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x007f7f2bc44b48>):
+  
+app/controllers/application_controller.rb:9:in `configure_permitted_parameters'
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 23:06:49 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (28.9ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 123ms (Views: 104.0ms | ActiveRecord: 13.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-30 23:06:53 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zqt9ERPI42l1mwfK5N5uEwhMBbEi9RmE2sXhlHzsiO+NGkHZljcrF0UR7CO5LffFkBddIxk82tk6/WkttW76sA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-30 23:06:53 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-30 23:07:04 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/sm/code/projects/RubyOnRails/konnectU/app/views/devise/sessions/new.html.erb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+sword?" new_user_password_path, class: "btn waves-effect wav
+                              ^):
+  
+app/views/devise/sessions/new.html.erb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-30 23:07:53 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (15.8ms)
+  Rendered shared/_nav.html.erb (12.1ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 115ms (Views: 113.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-11-30 23:08:08 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qFowS7tTrXAOwLneli6zl0EEK0pn6Hz8AQ/5YVd8TCD2wbPd/psA701aJX8L9PVys9LxBmp3sMvp6+Y0SH59Aw==", "user"=>{"email"=>"said@maadan.me", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "said@maadan.me"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qFowS7tTrXAOwLneli6zl0EEK0pn6Hz8AQ/5YVd8TCD2wbPd/psA701aJX8L9PVys9LxBmp3sMvp6+Y0SH59Aw==", "user"=>{"email"=>"said@maadan.me", "password"=>"[FILTERED]"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (7.2ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (12.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 268ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-11-30 23:08:28 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+l30RgIIGOjjUqNa9HJ6jSkDLrp6Zvibz5A5lvgDbuCkxnfQR8C1d6DIP/tpqDxo29X09nf5NKwndCbD5wFfww==", "user"=>{"email"=>"saidmaadan@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "saidmaadan@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2017-12-01 05:08:28.787958"], ["sign_in_count", 2], ["updated_at", "2017-12-01 05:08:28.788824"], ["id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 175ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-30 23:08:28 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (5.1ms)
+Completed 200 OK in 14ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 127.0.0.1 at 2017-11-30 23:08:36 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (4.5ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 92ms (Views: 84.2ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-30 23:08:40 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"h/r+kmvZ6JSIMP91kI9BT0iERZnfGRZV8WkdgpGZaM/ICfTq6JGpMnheyoaKjsLXWU5l8ImFHFLs5LQ3bofUow=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-30 23:08:40 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-30 23:09:02 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (2.8ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 107ms (Views: 105.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-30 23:11:10 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (2.2ms)
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 111ms (Views: 109.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-30 23:11:32 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (2.7ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 99ms (Views: 98.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-30 23:11:58 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (2.3ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 94ms (Views: 92.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-30 23:12:18 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+  Rendered shared/_nav.html.erb (1.2ms)
+  Rendered shared/_message.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 140ms (Views: 138.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-30 23:12:22 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (3.7ms)
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 115ms (Views: 114.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-30 23:12:29 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+  Rendered shared/_nav.html.erb (2.5ms)
+  Rendered shared/_message.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 136ms (Views: 133.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-30 23:15:00 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (3.7ms)
+  Rendered shared/_nav.html.erb (1.5ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 103ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-11-30 23:15:18 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (2.4ms)
+  Rendered shared/_nav.html.erb (16.2ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 135ms (Views: 133.8ms | ActiveRecord: 0.0ms)
+
+
