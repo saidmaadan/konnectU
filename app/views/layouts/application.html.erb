@@ -9,12 +9,19 @@
   </head>
 
   <body>
-    <%= render 'shared/nav' %>
+    <%= render partial: 'shared/nav' %>
+    <%= render partial: 'shared/message' %>
     <main>
       <div class="container">
         <%= yield %>
       </div>
     </main>
-    <%= render 'shared/footer' %>
+    <%= render partial: 'shared/footer' %>
   </body>
+
+  <script>
+    $(".button-collapse").sideNav();
+    $(".dropdown-button").dropdown();
+  </script>
+
 </html>
