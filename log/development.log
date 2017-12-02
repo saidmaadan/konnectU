@@ -2325,3 +2325,362 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 190ms (Views: 188.1ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7857623001116905275)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToUsers (20171202172959)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "image" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171202172959"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7857623001116905275)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-12-02 14:16:40 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sign_in" for 127.0.0.1 at 2017-12-02 14:17:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/sign_in"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sign_up" for 127.0.0.1 at 2017-12-02 14:17:28 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/registrations" for 127.0.0.1 at 2017-12-02 14:17:36 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (182.2ms)
+Completed 500 Internal Server Error in 238ms (ActiveRecord: 9.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_omniauth_authorize_path' for #<#<Class:0x007fddca9510a0>:0x007fddcb53a858>
+Did you mean?  user_google_oauth2_omniauth_authorize_path):
+    1: <div class="row">
+    2:   <div class="col m8 offset-m2 center">
+    3:     <h2>Sign up</h2>
+    4:     <%= link_to "Sign up with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn red darken-1" %>
+    5:     <br/><br/>
+    6: 
+    7:     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  
+app/views/devise/registrations/new.html.erb:4:in `_app_views_devise_registrations_new_html_erb___2234371820448599918_70295287876060'
+Started GET "/signup" for 127.0.0.1 at 2017-12-02 14:21:54 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (221.2ms)
+Completed 500 Internal Server Error in 288ms (ActiveRecord: 7.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_omniauth_authorize_path' for #<#<Class:0x007fcf4ce46650>:0x007fcf4ce36520>
+Did you mean?  user_google_oauth2_omniauth_authorize_path):
+    1: <div class="row">
+    2:   <div class="col m8 offset-m2 center">
+    3:     <h2>Sign up</h2>
+    4:     <%= link_to "Sign up with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn red darken-1" %>
+    5:     <br/><br/>
+    6: 
+    7:     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  
+app/views/devise/registrations/new.html.erb:4:in `_app_views_devise_registrations_new_html_erb___44732694950609190_70264162395960'
+Started GET "/signup" for 127.0.0.1 at 2017-12-02 14:23:00 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (45.9ms)
+  Rendered shared/_nav.html.erb (1.2ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 428ms (Views: 426.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:24:04 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:24:04 -0600
+Started GET "/signup" for 127.0.0.1 at 2017-12-02 14:36:46 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.1ms)
+  Rendered shared/_nav.html.erb (1.2ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 479ms (Views: 419.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:36:49 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:36:49 -0600
+Started GET "/signup" for 127.0.0.1 at 2017-12-02 14:41:32 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (33.9ms)
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 538ms (Views: 480.6ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:41:35 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:41:35 -0600
+Started GET "/" for 127.0.0.1 at 2017-12-02 14:42:27 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.0ms)
+  Rendered shared/_nav.html.erb (9.9ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 502ms (Views: 480.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-12-02 14:42:31 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (35.3ms)
+  Rendered shared/_nav.html.erb (2.5ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 292ms (Views: 222.4ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-02 14:42:35 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (47.1ms)
+  Rendered shared/_nav.html.erb (1.6ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 312ms (Views: 309.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:42:38 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:42:38 -0600
+Started GET "/login" for 127.0.0.1 at 2017-12-02 14:45:06 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.9ms)
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 515ms (Views: 470.4ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:45:09 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:45:09 -0600
+Started GET "/login" for 127.0.0.1 at 2017-12-02 14:46:35 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (22.3ms)
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 480ms (Views: 430.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:46:38 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:46:38 -0600
+Started GET "/login" for 127.0.0.1 at 2017-12-02 14:47:06 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.7ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 171ms (Views: 167.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:47:07 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:47:07 -0600
+Started GET "/signup" for 127.0.0.1 at 2017-12-02 14:50:49 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.5ms)
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 494ms (Views: 451.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:50:51 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:50:51 -0600
+Started GET "/signup" for 127.0.0.1 at 2017-12-02 14:51:42 -0600
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.8ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 498ms (Views: 454.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:51:46 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:51:46 -0600
+Started GET "/signup" for 127.0.0.1 at 2017-12-02 14:57:30 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2017-12-02 14:57:38 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.0ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (1.7ms)
+Completed 200 OK in 737ms (Views: 617.4ms | ActiveRecord: 40.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-02 14:57:42 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.6ms)
+  Rendered shared/_nav.html.erb (1.3ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 122ms (Views: 120.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-12-02 14:57:45 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (3.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (46.3ms)
+  Rendered shared/_nav.html.erb (2.3ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 315ms (Views: 314.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:57:50 -0600
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:57:50 -0600

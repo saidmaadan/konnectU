@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col m8 offset-m2 center">
     <h2>Sign up</h2>
+    <%= link_to "Sign up with Google", user_google_oauth2_omniauth_authorize_path, class: "btn red darken-1" %>
+    <br/><br/>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render partial: "shared/devisemessage" %>
@@ -26,3 +28,4 @@
 
   </div>
 </div>
+<!-- user_omniauth_authorize_path(:google_oauth2) -->

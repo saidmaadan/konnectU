@@ -1,10 +1,12 @@
 <div class="row">
   <div class="col-m8 offset-m2 center">
     <h2>Log In</h2>
+    <%= link_to "Login with Google", user_google_oauth2_omniauth_authorize_path, class: "btn red darken-1" %>
+    <br/><br/>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render partial: "shared/devisemessage" %>
-      
+
       <div class="input-field">
         <%= f.label :email %><br />
         <%= f.email_field :email, class: "validate"  %>
