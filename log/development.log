@@ -2684,3 +2684,224 @@ Completed 200 OK in 315ms (Views: 314.3ms | ActiveRecord: 0.0ms)
 
 Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:57:50 -0600
 Started GET "/auth/google_oauth2" for 127.0.0.1 at 2017-12-02 14:57:50 -0600
+Started GET "/registrations" for 127.0.0.1 at 2017-12-02 20:50:53 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/registrations"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-12-02 20:51:01 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered shared/_nav.html.erb (14.6ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 522ms (Views: 513.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-12-02 20:51:03 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (184.8ms)
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_omniauth_authorize_path' for #<#<Class:0x007fa35c165808>:0x007fa35af2b868>
+Did you mean?  user_facebook_omniauth_authorize_path):
+    3:     <h2>Sign up</h2>
+    4:     <%= link_to "Sign up with Google", user_google_oauth2_omniauth_authorize_path, class: "btn red darken-1" %>
+    5:     <br/><br/>
+    6:     <%= link_to "Sign up with Facebook", user_omniauth_authorize_path(:facebook), class: "btn blue darken-4" %>
+    7:     <br/><br/>
+    8:     
+    9:     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  
+app/views/devise/registrations/new.html.erb:6:in `_app_views_devise_registrations_new_html_erb__267350455322671973_70169791123540'
+Started GET "/sign_up" for 127.0.0.1 at 2017-12-02 20:52:37 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (26.1ms)
+  Rendered shared/_nav.html.erb (3.2ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 126ms (Views: 124.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-02 20:52:41 -0600
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-02 20:52:41 -0600
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=625388cce59ad9c924e17ff1ec248e9c85c5b8aa54642c52" for 127.0.0.1 at 2017-12-02 20:52:57 -0600
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"error_code"=>"1349048", "error_message"=>"Can't load URL: The domain of this URL isn't included in the app's domains. To be able to load this URL, add all domains and sub-domains of your app to the App Domains field in your app settings.", "state"=>"625388cce59ad9c924e17ff1ec248e9c85c5b8aa54642c52"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-02 20:52:57 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.8ms)
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 136ms (Views: 130.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-02 20:54:36 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 108ms (Views: 106.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-02 20:54:39 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (42.7ms)
+  Rendered shared/_nav.html.erb (4.1ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 214ms (Views: 210.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-12-02 20:54:41 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.4ms)
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 166ms (Views: 165.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-02 20:54:50 -0600
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-02 20:54:50 -0600
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=5e175377037e72eadfee072f5e45c791037803082f863070" for 127.0.0.1 at 2017-12-02 20:55:28 -0600
+Processing by OmniauthCallbacksController#failure as HTML
+  Parameters: {"error_code"=>"1349048", "error_message"=>"Can't load URL: The domain of this URL isn't included in the app's domains. To be able to load this URL, add all domains and sub-domains of your app to the App Domains field in your app settings.", "state"=>"5e175377037e72eadfee072f5e45c791037803082f863070"}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-02 20:55:28 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 100ms (Views: 98.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-02 20:56:47 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.5ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 121ms (Views: 118.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-02 20:56:49 -0600
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-02 20:56:50 -0600
+Started GET "/sign_up" for 127.0.0.1 at 2017-12-02 21:00:54 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.7ms)
+  Rendered shared/_nav.html.erb (1.9ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (1.6ms)
+Completed 200 OK in 194ms (Views: 192.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-02 21:00:56 -0600
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-02 21:00:56 -0600
+Started GET "/auth/facebook/callback?code=AQAtMnOq8y70PhlMR8XLIKG6WtxdwU7tHPIHFUeqPLfDGB-BvuQ924Na0LJsAfAv1CJE-9SEYVOTLB7mD1YF4HuUpkLDw-7rYuiHREOzLAwHhRwwDf7QElQ_ywNOajgCAveGehTWWjiSYOa45QEfRVOU38vsnFuKgjPpXc4p3v9w9nzgJsCky6rqYW2xf4Eg_J4JuEmoSRY9W_uSKzzX-rHXPAlWy6mU_D_aI4ExUwfJ3pkbUgWoiCfgf2J1R6KkgsaUuN3gBJi1z7vZ7fTAmOd_9fYJkdvYUNUR0ooZEJm26e3IjiBawMqe4R4n14OLmS0&state=f4676389a5446ebbf94cb4e44c61f5fac60b4de91864d770" for 127.0.0.1 at 2017-12-02 21:01:03 -0600
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAtMnOq8y70PhlMR8XLIKG6WtxdwU7tHPIHFUeqPLfDGB-BvuQ924Na0LJsAfAv1CJE-9SEYVOTLB7mD1YF4HuUpkLDw-7rYuiHREOzLAwHhRwwDf7QElQ_ywNOajgCAveGehTWWjiSYOa45QEfRVOU38vsnFuKgjPpXc4p3v9w9nzgJsCky6rqYW2xf4Eg_J4JuEmoSRY9W_uSKzzX-rHXPAlWy6mU_D_aI4ExUwfJ3pkbUgWoiCfgf2J1R6KkgsaUuN3gBJi1z7vZ7fTAmOd_9fYJkdvYUNUR0ooZEJm26e3IjiBawMqe4R4n14OLmS0", "state"=>"f4676389a5446ebbf94cb4e44c61f5fac60b4de91864d770"}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10214609630984630"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "me@saidmaadan.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "me@saidmaadan.com"], ["LIMIT", 1]]
+  [1m[35mSQL (8.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "provider", "uid", "image") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "me@saidmaadan.com"], ["encrypted_password", "$2a$11$t.tdmSO3Cf0qQ4g3RU/bzODz05h37BiRTm0QnXwd80eYJGUQtmhAi"], ["created_at", "2017-12-03 03:01:04.617543"], ["updated_at", "2017-12-03 03:01:04.617543"], ["name", "Said Maadan"], ["provider", "facebook"], ["uid", "10214609630984630"], ["image", "http://graph.facebook.com/v2.6/10214609630984630/picture"]]
+MyMailer#new_user: processed outbound mail in 3722.9ms
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-12-03 03:01:08.554773"], ["last_sign_in_at", "2017-12-03 03:01:08.554773"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2017-12-03 03:01:08.556413"], ["id", 2]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4133ms (ActiveRecord: 26.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-02 21:01:08 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (7.6ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 126ms (Views: 120.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-02 21:05:15 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (5.2ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 1542ms (Views: 1534.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-02 21:05:35 -0600
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (5.7ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 1546ms (Views: 1542.4ms | ActiveRecord: 0.6ms)
+
+

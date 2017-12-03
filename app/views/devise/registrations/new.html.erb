@@ -3,7 +3,9 @@
     <h2>Sign up</h2>
     <%= link_to "Sign up with Google", user_google_oauth2_omniauth_authorize_path, class: "btn red darken-1" %>
     <br/><br/>
-
+    <%= link_to "Sign up with Facebook", user_facebook_omniauth_authorize_path, class: "btn blue darken-4" %>
+    <br/><br/>
+    
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render partial: "shared/devisemessage" %>
 
