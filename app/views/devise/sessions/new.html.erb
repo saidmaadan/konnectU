@@ -5,6 +5,7 @@
     <br/><br/>
     <%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path, class: "btn blue darken-4" %>
     <br/><br/>
+     <%= link_to "Sign up with Github", user_github_omniauth_authorize_path, class: "btn grey darken-2" %>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render partial: "shared/devisemessage" %>

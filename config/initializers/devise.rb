@@ -18,9 +18,11 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   require 'omniauth-google-oauth2'
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_SECRET_ID'], {access_type: "offline", approval_prompt: ""}
+  config.omniauth :google_oauth2, ENV.fetch('GOOGLE_CLIENT_ID'), ENV.fetch('GOOGLE_SECRET_ID'), {access_type: "offline", approval_prompt: ""}
 
   require 'omniauth-facebook'
   config.omniauth :facebook, ENV.fetch('FB_APP_ID'), ENV.fetch('FB_APP_SECRET')
+
+  require 'omniauth-github'
+  config.omniauth :github, ENV.fetch('GITHUB_CLIENT_ID'), ENV.fetch('GITHUB_SECRET_ID'), scope: "user:email"
 end
-#  {access_type: "offline", approval_prompt: ""}
