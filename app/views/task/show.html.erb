@@ -4,12 +4,12 @@
 			<div class="card-content">
 				<div class="collection">
 					<% @tasks.each do |task| %>
-						<% if task.header %>
-							<div class="collection-item active">
-								<i class="mdi-social-school"> <%= task.title %></i>
-							</div>
-						<% else %>
-							<%= link_to [task.project, task], class: "collection-item" do %>
+  					<% if task.header %>
+  						<div class="collection-item active">
+  							<i class="mdi-social-school"> <%= task.title %></i>
+  						</div>
+					  <% else %>
+              <%= link_to [task.project, task], class: "collection-item" do %>
 								<%= task.title %>
 							<% end %>
 						<% end %>
