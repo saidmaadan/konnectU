@@ -3654,3 +3654,157 @@ Processing by Admin::ProjectsController#index as HTML
 Completed 200 OK in 210ms (Views: 205.5ms | ActiveRecord: 1.6ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7857623001116905275)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToProjects (20171204002000)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7857623001116905275)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7857623001116905275)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToProjects (20171204002000)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "projects" ADD "image_file_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "projects" ADD "image_content_type" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "projects" ADD "image_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "projects" ADD "image_updated_at" timestamp[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171204002000"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7857623001116905275)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin/projects/new" for 127.0.0.1 at 2017-12-03 18:24:34 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::ProjectsController#new as HTML
+  [1m[36mAdminUser Load (4.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/new.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/new.html.arb (840.9ms)
+Completed 200 OK in 942ms (Views: 859.6ms | ActiveRecord: 27.7ms)
+
+
+Started GET "/admin/projects" for 127.0.0.1 at 2017-12-03 18:34:54 -0600
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTask Load (4.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (381.7ms)
+Completed 200 OK in 466ms (Views: 382.5ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/admin/projects/2/edit" for 127.0.0.1 at 2017-12-03 18:35:01 -0600
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb (168.9ms)
+Completed 200 OK in 196ms (Views: 185.4ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/admin/projects/2" for 127.0.0.1 at 2017-12-03 18:35:12 -0600
+Processing by Admin::ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8kyRSbbwpufljdj1dwfyEvxgOt1pvVUZ7/Zh8jebc33mXNU7rMjlqsi/kxy4qC/owF8HQW0d+5AgeLHvrnKU7Q==", "project"=>{"name"=>"App Design", "content"=>"To use React native to build native app", "price"=>"500", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fd3ed9b5cd0 @tempfile=#<Tempfile:/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/RackMultipart20171203-24693-1ojntz0.jpg>, @original_filename="property01.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[image]\"; filename=\"property01.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Project", "id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ab7ccff9e907ad225e6bd3bd9cce63b320171203-24693-1eyjhju.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ab7ccff9e907ad225e6bd3bd9cce63b320171203-24693-40u0f7.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ab7ccff9e907ad225e6bd3bd9cce63b320171203-24693-40u0f7.jpg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ab7ccff9e907ad225e6bd3bd9cce63b320171203-24693-40u0f7.jpg[0]' -auto-orient -resize "680x300>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/afb4afe253fa4ccf4ac5dff2c57a7b7a20171203-24693-33qewt'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ab7ccff9e907ad225e6bd3bd9cce63b320171203-24693-40u0f7.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ab7ccff9e907ad225e6bd3bd9cce63b320171203-24693-40u0f7.jpg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ab7ccff9e907ad225e6bd3bd9cce63b320171203-24693-40u0f7.jpg[0]' -auto-orient -resize "170x75>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/afb4afe253fa4ccf4ac5dff2c57a7b7a20171203-24693-h0bs1a'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ab7ccff9e907ad225e6bd3bd9cce63b320171203-24693-5kpfsy.jpg'
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "projects" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "projects"."id" = $6[0m  [["image_file_name", "property01.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 192603], ["image_updated_at", "2017-12-04 00:35:12.212998"], ["updated_at", "2017-12-04 00:35:13.098970"], ["id", 2]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/projects/2
+Completed 302 Found in 959ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/admin/projects/2" for 127.0.0.1 at 2017-12-03 18:35:13 -0600
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb (224.7ms)
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `attribute_table' for #<ActiveAdmin::Views::Pages::Show:0x007fd3ead25e68>
+Did you mean?  attributes_table):
+    1: insert_tag renderer_for(:show)
+  
+app/admin/project.rb:4:in `block (2 levels) in <top (required)>'
+Started GET "/admin/projects/2" for 127.0.0.1 at 2017-12-03 18:35:41 -0600
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb (141.3ms)
+Completed 200 OK in 194ms (Views: 154.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/admin/projects" for 127.0.0.1 at 2017-12-03 18:35:46 -0600
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (9.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/index.html.arb (209.0ms)
+Completed 200 OK in 230ms (Views: 211.5ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/admin/projects/1/edit" for 127.0.0.1 at 2017-12-03 18:35:48 -0600
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/edit.html.arb (154.3ms)
+Completed 200 OK in 187ms (Views: 182.9ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/admin/projects/1" for 127.0.0.1 at 2017-12-03 18:35:56 -0600
+Processing by Admin::ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mAc5KchJayht8LNYfthRi2qWo/wZJZ1ip80Y+sZBXFyMF31b0nEoZUDC+LGxd4xxVqmeYB2FM+toQ8jnX6i7zA==", "project"=>{"name"=>"Web Design", "content"=>"Web design and development", "price"=>"200", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fd3f0152720 @tempfile=#<Tempfile:/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/RackMultipart20171203-24693-67hf05.jpeg>, @original_filename="pro7.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[image]\"; filename=\"pro7.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Project", "id"=>"1"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171203-24693-162gmvj.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171203-24693-h682jx.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171203-24693-h682jx.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171203-24693-h682jx.jpeg[0]' -auto-orient -resize "680x300>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ee6a0bf1f83011b9aa32a5be4c671d7720171203-24693-1oxchf1'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171203-24693-h682jx.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171203-24693-h682jx.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171203-24693-h682jx.jpeg[0]' -auto-orient -resize "170x75>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/ee6a0bf1f83011b9aa32a5be4c671d7720171203-24693-fizwk5'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171203-24693-yd29u5.jpeg'
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "projects" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "projects"."id" = $6[0m  [["image_file_name", "pro7.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 11199], ["image_updated_at", "2017-12-04 00:35:56.295277"], ["updated_at", "2017-12-04 00:35:56.457867"], ["id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/projects/1
+Completed 302 Found in 256ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/admin/projects/1" for 127.0.0.1 at 2017-12-03 18:35:56 -0600
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/gems/activeadmin-1.1.0/app/views/active_admin/resource/show.html.arb (170.9ms)
+Completed 200 OK in 188ms (Views: 183.9ms | ActiveRecord: 0.6ms)
+
+
