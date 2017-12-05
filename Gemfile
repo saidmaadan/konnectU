@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'materialize-sass'
@@ -57,9 +57,10 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
-gem 'activeadmin', '~> 1.1'
-gem 'active_skin', '~> 0.0.12'
+gem 'activeadmin', github: 'activeadmin'
+gem 'active_skin'
 gem 'paperclip', '~> 5.1'
 gem 'redcarpet', '~> 3.2', '>= 3.2.3'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+# gem 'active_admin-sortable_tree'
