@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 25}
 
+  has_many :subscriptions
+	has_many :projects, through: :subscriptions
+
   after_create :send_notification
 
   def send_notification
@@ -34,7 +37,7 @@ class User < ApplicationRecord
   		end
   	end
 	end
-	
+
 	def self.find_for_facebook_oauth(access_token, signed_in_resourse=nil)
     data = access_token.info
     user = User.where(:provider => access_token.provider, :uid => access_token.uid).first
@@ -57,7 +60,7 @@ class User < ApplicationRecord
       end
     end
 	end
-	
+
 	def self.find_for_github_oauth(access_token, signed_in_resourse=nil)
     data = access_token["info"]
     user = User.where(:provider => access_token["provider"], :uid => access_token["uid"]).first
@@ -74,7 +77,7 @@ class User < ApplicationRecord
           name = data["nickname"]
         else
           name = data["name"]
-        end  
+        end
 
         user = User.create(
           name: name,
