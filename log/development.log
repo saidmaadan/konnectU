@@ -13895,3 +13895,463 @@ Processing by TaskController#show as HTML
 Completed 200 OK in 453ms (Views: 256.6ms | ActiveRecord: 108.9ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7857623001116905275)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReviews (20171207155937)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.3ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "project_id" bigint, "user_id" bigint, "comment" text, "created_at" timestamp NOT NULL, "star" integer, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_64798be025"
+FOREIGN KEY ("project_id")
+  REFERENCES "projects" ("id")
+, CONSTRAINT "fk_rails_74a66bd6c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_project_id" ON "reviews"  ("project_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews"  ("user_id")[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171207155937"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7857623001116905275)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/logout" for 127.0.0.1 at 2017-12-07 10:31:49 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2ONKA5s2/mUgi2vQA7ZDJzSHoySww8GTmFVDh6pzYntgPY2V/outfN9sfKcSNxmWfOqpfAjrgN/19gxXrH0Iaw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-07 10:31:49 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (18.8ms)
+  Rendered shared/_nav.html.erb (7.3ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (1.4ms)
+Completed 200 OK in 1225ms (Views: 1218.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-07 10:31:53 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered project/show.html.erb within layouts/application (310.7ms)
+Completed 500 Internal Server Error in 482ms (ActiveRecord: 13.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sm/code/projects/RubyOnRails/konnectU/app/views"
+  * "/Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views"
+  * "/Users/sm/.rvm/gems/ruby-2.4.0/gems/kaminari-core-1.1.1/app/views"
+  * "/Users/sm/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    63: 			<div class="card-content">
+    64: 				<h4>Reviews</h4>
+    65: 				<div><%= render 'reviews/form' if @joined && !@hasReview %></div>
+    66: 				<div><%= render 'reviews/index' %></div>
+    67: 			</div>
+    68: 		</div>
+    69: 	</div>
+  
+app/views/project/show.html.erb:66:in `_app_views_project_show_html_erb__2889369097061612326_70289020617320'
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-07 10:32:46 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered project/show.html.erb within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sm/code/projects/RubyOnRails/konnectU/app/views"
+  * "/Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views"
+  * "/Users/sm/.rvm/gems/ruby-2.4.0/gems/kaminari-core-1.1.1/app/views"
+  * "/Users/sm/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    63: 			<div class="card-content">
+    64: 				<h4>Reviews</h4>
+    65: 				<div><%= render 'reviews/form' if @joined && !@hasReview %></div>
+    66: 				<div><%= render 'reviews/index' %></div>
+    67: 			</div>
+    68: 		</div>
+    69: 	</div>
+  
+app/views/project/show.html.erb:66:in `_app_views_project_show_html_erb__2889369097061612326_70289014559220'
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-07 10:33:33 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (1.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered project/show.html.erb within layouts/application (81.3ms)
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 20.3ms)
+
+
+  
+ActionView::Template::Error (Missing partial reviews/_index with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :coffee, :jbuilder]}. Searched in:
+  * "/Users/sm/code/projects/RubyOnRails/konnectU/app/views"
+  * "/Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views"
+  * "/Users/sm/.rvm/gems/ruby-2.4.0/gems/kaminari-core-1.1.1/app/views"
+  * "/Users/sm/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views"
+):
+    63: 			<div class="card-content">
+    64: 				<h4>Reviews</h4>
+    65: 				<div><%= render 'reviews/form' if @joined && !@hasReview %></div>
+    66: 				<div><%= render 'reviews/index' %></div>
+    67: 			</div>
+    68: 		</div>
+    69: 	</div>
+  
+app/views/project/show.html.erb:66:in `_app_views_project_show_html_erb___3839629000415802194_70180854270900'
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-07 10:34:18 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered reviews/_index.html.erb (1.0ms)
+  Rendered project/show.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/Users/sm/code/projects/RubyOnRails/konnectU/app/views/reviews/_index.html.erb:29: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/reviews/_index.html.erb:29: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/project/show.html.erb:66:in `_app_views_project_show_html_erb___3839629000415802194_70180894595240'
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-07 10:35:11 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  [1m[36mReview Load (5.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  Rendered reviews/_index.html.erb (10.3ms)
+  Rendered project/show.html.erb within layouts/application (20.9ms)
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 1360ms (Views: 1343.3ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-07 10:35:17 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (48.0ms)
+  Rendered shared/_nav.html.erb (3.1ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 388ms (Views: 383.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2017-12-07 10:35:20 -0600
+Started GET "/auth/github" for 127.0.0.1 at 2017-12-07 10:35:20 -0600
+Started GET "/auth/github/callback?code=7e8895d659fd3f0425c8&state=47f63e93c79b38470e4590f6adb1a142a8125c8793a4338b" for 127.0.0.1 at 2017-12-07 10:35:21 -0600
+Processing by OmniauthCallbacksController#github as HTML
+  Parameters: {"code"=>"7e8895d659fd3f0425c8", "state"=>"47f63e93c79b38470e4590f6adb1a142a8125c8793a4338b"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "github"], ["uid", "4209788"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-12-07 16:35:22.535581"], ["last_sign_in_at", "2017-12-06 23:07:38.343544"], ["sign_in_count", 5], ["updated_at", "2017-12-07 16:35:22.539085"], ["id", 3]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 18.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-07 10:35:22 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (5.0ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (1.7ms)
+Completed 200 OK in 326ms (Views: 320.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-07 10:35:25 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (14.1ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (57.9ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (8.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (4.7ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  Rendered reviews/_index.html.erb (3.9ms)
+  Rendered project/show.html.erb within layouts/application (34.4ms)
+  Rendered shared/_nav.html.erb (2.6ms)
+  Rendered shared/_message.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 526ms (Views: 420.0ms | ActiveRecord: 83.2ms)
+
+
+Started POST "/project/react-and-angular-project/reviews" for 127.0.0.1 at 2017-12-08 09:34:51 -0600
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7bwc6QXruS4sWdmDLRrWlYTj1aeoNO24iAfej8V3vjCKtz1ubqWP6NB1xhQVgY/ABYdihF2iYApFVpOAjudKmg==", "review"=>{"star"=>"2", "comment"=>"This is cool", "project_id"=>"3", "user_id"=>"3"}, "commit"=>"Create Review", "project_id"=>"react-and-angular-project"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (9.7ms)[0m  [1m[32mINSERT INTO "reviews" ("project_id", "user_id", "comment", "created_at", "star", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["project_id", 3], ["user_id", 3], ["comment", "This is cool"], ["created_at", "2017-12-08 15:34:51.859527"], ["star", 2], ["updated_at", "2017-12-08 15:34:51.859527"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/project/react-and-angular-project
+Completed 302 Found in 34ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-08 09:34:51 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (1.5ms)
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reviews/_index.html.erb (314.0ms)
+  Rendered project/show.html.erb within layouts/application (324.9ms)
+Completed 500 Internal Server Error in 346ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `timeago' for #<#<Class:0x007fa881c708e0>:0x007fa889092ef8>
+Did you mean?  time_tag):
+    13: 		<div class="col m10">
+    14: 			<div>
+    15: 				<strong><%= r.user.name %></strong>
+    16: 				<span class="right"><%= timeago(r.created_at) %></span>
+    17: 			</div>
+    18: 			<!-- <div id="stars_<%= r.id %>"></div> -->
+    19:       <div><%= r.star %></div>
+  
+app/views/reviews/_index.html.erb:16:in `block in _app_views_reviews__index_html_erb___1638774705056036759_70180915000740'
+app/views/reviews/_index.html.erb:5:in `_app_views_reviews__index_html_erb___1638774705056036759_70180915000740'
+app/views/project/show.html.erb:66:in `_app_views_project_show_html_erb___3839629000415802194_70180915158520'
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-08 09:35:33 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (2.8ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reviews/_index.html.erb (373.0ms)
+  Rendered project/show.html.erb within layouts/application (388.1ms)
+Completed 500 Internal Server Error in 429ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `timeago' for #<#<Class:0x007fa881c708e0>:0x007fa8827b9468>
+Did you mean?  time_tag):
+    13: 		<div class="col m10">
+    14: 			<div>
+    15: 				<strong><%= r.user.name %></strong>
+    16: 				<!-- <span class="right"><%= timeago(r.created_at) %></span> -->
+    17: 			</div>
+    18: 			<!-- <div id="stars_<%= r.id %>"></div> -->
+    19:       <div><%= r.star %></div>
+  
+app/views/reviews/_index.html.erb:16:in `block in _app_views_reviews__index_html_erb___1638774705056036759_70180919235940'
+app/views/reviews/_index.html.erb:5:in `_app_views_reviews__index_html_erb___1638774705056036759_70180919235940'
+app/views/project/show.html.erb:66:in `_app_views_project_show_html_erb___3839629000415802194_70180860187140'
+Started GET "/" for 127.0.0.1 at 2017-12-08 09:35:49 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (5.1ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (2.0ms)
+Completed 200 OK in 328ms (Views: 322.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-08 09:35:53 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (18.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (2.8ms)
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mReview Load (5.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reviews/_index.html.erb (362.3ms)
+  Rendered project/show.html.erb within layouts/application (403.7ms)
+Completed 500 Internal Server Error in 463ms (ActiveRecord: 41.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `timeago' for #<#<Class:0x007fa881c708e0>:0x007fa886f4c8c0>
+Did you mean?  time_tag):
+    13: 		<div class="col m10">
+    14: 			<div>
+    15: 				<strong><%= r.user.name %></strong>
+    16: 				<!-- <span class="right"><%= timeago(r.created_at) %></span> -->
+    17: 			</div>
+    18: 			<!-- <div id="stars_<%= r.id %>"></div> -->
+    19:       <div><%= r.star %></div>
+  
+app/views/reviews/_index.html.erb:16:in `block in _app_views_reviews__index_html_erb___1638774705056036759_70180915142140'
+app/views/reviews/_index.html.erb:5:in `_app_views_reviews__index_html_erb___1638774705056036759_70180915142140'
+app/views/project/show.html.erb:66:in `_app_views_project_show_html_erb___3839629000415802194_70180897712740'
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-08 09:36:12 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (2.0ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reviews/_index.html.erb (570.0ms)
+  Rendered project/show.html.erb within layouts/application (582.7ms)
+Completed 500 Internal Server Error in 611ms (ActiveRecord: 4.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `r' for #<#<Class:0x007fa881c708e0>:0x007fa881fb2bc0>):
+    26: 	</div>
+    27: <% end %>
+    28: 
+    29: <!-- <span class="right"><%= timeago(r.created_at) %></span> -->
+  
+app/views/reviews/_index.html.erb:29:in `_app_views_reviews__index_html_erb___1638774705056036759_70180855859780'
+app/views/project/show.html.erb:66:in `_app_views_project_show_html_erb___3839629000415802194_70180855979360'
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-08 09:36:29 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (2.5ms)
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reviews/_index.html.erb (4.9ms)
+  Rendered project/show.html.erb within layouts/application (20.7ms)
+  Rendered shared/_nav.html.erb (23.2ms)
+  Rendered shared/_message.html.erb (1.6ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 413ms (Views: 394.5ms | ActiveRecord: 3.8ms)
+
+
+Started DELETE "/project/react-and-angular-project/reviews/1" for 127.0.0.1 at 2017-12-08 09:36:37 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"y3OfJt84aX4pzRyrH8RInbviNAzInf0pQ0X9gT7O1XFTrmXfgdrzXoLgxCj/FxiTLZAy2MJJBkWH2nym8mZKrQ==", "project_id"=>"react-and-angular-project", "id"=>"1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/project/react-and-angular-project
+Completed 302 Found in 15ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-08 09:36:37 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (2.6ms)
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  Rendered reviews/_index.html.erb (2.1ms)
+  Rendered project/show.html.erb within layouts/application (17.3ms)
+  Rendered shared/_nav.html.erb (2.8ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 244ms (Views: 226.0ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/project/react-and-angular-project/reviews" for 127.0.0.1 at 2017-12-08 09:45:32 -0600
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YA21scA3H/0T7k5iYCb6OObN+IHp2lYJYATkHgXR7In40E9IntWF3bjDluGA9ao2cL/+VeMOrWWkm2U5yXlzVQ==", "review"=>{"star"=>"4", "comment"=>"This is cool", "project_id"=>"3", "user_id"=>"3"}, "commit"=>"Create Review", "project_id"=>"react-and-angular-project"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("project_id", "user_id", "comment", "created_at", "star", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["project_id", 3], ["user_id", 3], ["comment", "This is cool"], ["created_at", "2017-12-08 15:45:33.005694"], ["star", 4], ["updated_at", "2017-12-08 15:45:33.005694"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/project/react-and-angular-project
+Completed 302 Found in 64ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-08 09:45:33 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT AVG("reviews"."star") FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (1.9ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reviews/_index.html.erb (4.6ms)
+  Rendered project/show.html.erb within layouts/application (36.7ms)
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 256ms (Views: 220.1ms | ActiveRecord: 10.8ms)
+
+
