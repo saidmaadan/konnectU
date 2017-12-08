@@ -14,5 +14,6 @@
 //= require materialize
 // = require rails-ujs
 //= require toastr
+//= require jquery.timeago
 //= require turbolinks
 //= require_tree .
