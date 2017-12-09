@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require active_admin
 //= require materialize
 // = require rails-ujs
 //= require toastr
