@@ -273,6 +273,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (3.8.0)
+      faraday (~> 0.10)
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -326,6 +328,7 @@ DEPENDENCIES
   sendgrid-ruby (~> 5.2)
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe
   toastr-rails (~> 1.0, >= 1.0.3)
   turbolinks (~> 5)
   tzinfo-data

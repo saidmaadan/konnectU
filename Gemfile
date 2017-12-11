@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'materialize-sass'
-gem 'material_icons' 
+gem 'material_icons'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -65,3 +65,4 @@ gem 'redcarpet', '~> 3.2', '>= 3.2.3'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 # gem 'active_admin-sortable_tree'
+gem 'stripe'

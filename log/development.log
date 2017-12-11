@@ -15259,3 +15259,881 @@ Processing by Admin::TasksController#new as HTML
 Completed 200 OK in 312ms (Views: 260.0ms | ActiveRecord: 13.0ms)
 
 
+Started GET "/project/2" for 127.0.0.1 at 2017-12-10 20:37:48 -0600
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "2"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:37:49 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Exists (8.7ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (35.3ms)
+  [1m[36mUser Load (128.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 2], ["LIMIT", 10]]
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Load (18.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 2], ["user_id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (43.3ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendering project/show.html.erb within layouts/application
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 1089ms (Views: 1055.9ms | ActiveRecord: 30.8ms)
+
+
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered reviews/_form.html.erb (100.6ms)
+  [1m[36mReview Load (5.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 2]]
+  Rendered reviews/_index.html.erb (7.6ms)
+  [1m[36mTask Load (28.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 2]]
+  Rendered project/show.html.erb within layouts/application (336.2ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_message.html.erb (0.1ms)
+  Rendered shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 1819ms (Views: 575.5ms | ActiveRecord: 250.3ms)
+
+
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-10 20:37:54 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (10.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (14.1ms)[0m  [1m[34mSELECT AVG("reviews"."star") FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (1.5ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reviews/_index.html.erb (7.5ms)
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."star") FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  Rendered project/show.html.erb within layouts/application (92.7ms)
+  Rendered shared/_nav.html.erb (1.3ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 372ms (Views: 318.0ms | ActiveRecord: 32.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:38:06 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (23.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.3ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 447ms (Views: 440.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/project/app-design" for 127.0.0.1 at 2017-12-10 20:38:08 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"app-design"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "app-design"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 2], ["LIMIT", 10]]
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 2], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 2]]
+  Rendered reviews/_form.html.erb (3.9ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 2]]
+  Rendered reviews/_index.html.erb (1.7ms)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 2]]
+  Rendered project/show.html.erb within layouts/application (16.7ms)
+  Rendered shared/_nav.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 318ms (Views: 239.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:38:10 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.5ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (3.5ms)
+Completed 200 OK in 385ms (Views: 378.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/project/web-design" for 127.0.0.1 at 2017-12-10 20:38:11 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"web-design"}
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "web-design"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (41.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 1], ["LIMIT", 10]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 1]]
+  Rendered reviews/_form.html.erb (1.6ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 1]]
+  Rendered reviews/_index.html.erb (1.7ms)
+  [1m[36mTask Load (6.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 1]]
+  Rendered project/show.html.erb within layouts/application (32.1ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 299ms (Views: 209.1ms | ActiveRecord: 55.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:38:26 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.1ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 233ms (Views: 228.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2017-12-10 20:38:35 -0600
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  [1m[36mAdminUser Load (4.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 38ms (ActiveRecord: 17.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2017-12-10 20:38:35 -0600
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (1.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/page/index.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/page/index.html.arb (150.5ms)
+Completed 200 OK in 165ms (Views: 156.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/projects" for 127.0.0.1 at 2017-12-10 20:38:39 -0600
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (1.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb (243.6ms)
+Completed 200 OK in 272ms (Views: 257.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/admin/projects/new" for 127.0.0.1 at 2017-12-10 20:38:46 -0600
+Processing by Admin::ProjectsController#new as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb (168.7ms)
+Completed 200 OK in 202ms (Views: 192.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/admin/projects" for 127.0.0.1 at 2017-12-10 20:39:44 -0600
+Processing by Admin::ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MqA/pPb0neQSiFFiHFtwwE7IyNJCaYnbgBwdcvuFFYgD9GDxM7lNAdLuna4SFE/HyLaII6iGDILI82xRF61T5Q==", "project"=>{"name"=>"React Tutorial", "content"=>"Some tutorial about React and Redux component", "price"=>"45.99", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fc0fada1e08 @tempfile=#<Tempfile:/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/RackMultipart20171210-5920-1d1uyb.jpeg>, @original_filename="pro4.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[image]\"; filename=\"pro4.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Project"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/33727d4809d7f6461a5aafd580a7652920171210-5920-fisxzl.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/33727d4809d7f6461a5aafd580a7652920171210-5920-u9zcrq.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/33727d4809d7f6461a5aafd580a7652920171210-5920-u9zcrq.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/33727d4809d7f6461a5aafd580a7652920171210-5920-u9zcrq.jpeg[0]' -auto-orient -resize "680x300>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/249e6726eb7ff383e8d7210149bae64020171210-5920-1hnsdkx'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/33727d4809d7f6461a5aafd580a7652920171210-5920-u9zcrq.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/33727d4809d7f6461a5aafd580a7652920171210-5920-u9zcrq.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/33727d4809d7f6461a5aafd580a7652920171210-5920-u9zcrq.jpeg[0]' -auto-orient -resize "170x75>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/249e6726eb7ff383e8d7210149bae64020171210-5920-1ajyojl'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" WHERE ("projects"."id" IS NOT NULL) AND "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-tutorial"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/33727d4809d7f6461a5aafd580a7652920171210-5920-aryyz9.jpeg'
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb (158.6ms)
+Completed 200 OK in 391ms (Views: 168.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/system/projects/images//original/pro4.jpeg?1512959984" for 127.0.0.1 at 2017-12-10 20:39:45 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/system/projects/images/original/pro4.jpeg"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/admin/tasks" for 127.0.0.1 at 2017-12-10 20:39:48 -0600
+Processing by Admin::TasksController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" ORDER BY "tasks"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb (238.3ms)
+Completed 200 OK in 265ms (Views: 255.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/admin/tasks/new" for 127.0.0.1 at 2017-12-10 20:39:52 -0600
+Processing by Admin::TasksController#new as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb (169.4ms)
+Completed 200 OK in 192ms (Views: 186.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/tasks" for 127.0.0.1 at 2017-12-10 20:40:02 -0600
+Processing by Admin::TasksController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" ORDER BY "tasks"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb (198.0ms)
+Completed 200 OK in 223ms (Views: 216.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/admin/tasks/4" for 127.0.0.1 at 2017-12-10 20:40:09 -0600
+Processing by Admin::TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."slug" = $1 LIMIT $2[0m  [["slug", "4"], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 4 AND "active_admin_comments"."namespace" = $2[0m  [["resource_type", "Task"], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 4 AND "active_admin_comments"."namespace" = $2 LIMIT $3 OFFSET $4[0m  [["resource_type", "Task"], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb (206.1ms)
+Completed 200 OK in 229ms (Views: 214.8ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/admin/tasks" for 127.0.0.1 at 2017-12-10 20:40:22 -0600
+Processing by Admin::TasksController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" ORDER BY "tasks"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb (216.7ms)
+Completed 200 OK in 248ms (Views: 235.2ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/admin/tasks/new" for 127.0.0.1 at 2017-12-10 20:40:24 -0600
+Processing by Admin::TasksController#new as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb (166.1ms)
+Completed 200 OK in 200ms (Views: 194.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/admin/tasks" for 127.0.0.1 at 2017-12-10 20:41:00 -0600
+Processing by Admin::TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LyE/C88Bl4dAgSQafUUjHniZf/dkxCuGIwI20jaRqJ8edWBeCkxHYoDn6NZzChwZ/uc/Bo4rrt9r7Ufx2rnu8g==", "task"=>{"project_id"=>"3", "title"=>"Online Tutorial", "note"=>"Online Tutorial", "video"=>"dntvfw4y5h", "header"=>"0", "tag"=>"React3", "slug"=>""}, "commit"=>"Create Task"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: :slug
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."id" IS NOT NULL) AND "tasks"."slug" = $1 LIMIT $2[0m  [["slug", "online-tutorial"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "note", "video", "tag", "project_id", "created_at", "updated_at", "slug") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Online Tutorial"], ["note", "Online Tutorial"], ["video", "dntvfw4y5h"], ["tag", "React3"], ["project_id", 3], ["created_at", "2017-12-11 02:41:00.142699"], ["updated_at", "2017-12-11 02:41:00.142699"], ["slug", "online-tutorial"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/tasks/online-tutorial
+Completed 302 Found in 50ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/admin/tasks/online-tutorial" for 127.0.0.1 at 2017-12-10 20:41:00 -0600
+Processing by Admin::TasksController#show as HTML
+  Parameters: {"id"=>"online-tutorial"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."slug" = $1 LIMIT $2[0m  [["slug", "online-tutorial"], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 9 AND "active_admin_comments"."namespace" = $2[0m  [["resource_type", "Task"], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 9 AND "active_admin_comments"."namespace" = $2 LIMIT $3 OFFSET $4[0m  [["resource_type", "Task"], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb (101.2ms)
+Completed 200 OK in 113ms (Views: 108.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admin/projects" for 127.0.0.1 at 2017-12-10 20:41:03 -0600
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mSubscription Load (0.4ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb (238.3ms)
+Completed 200 OK in 261ms (Views: 253.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/admin/projects/new" for 127.0.0.1 at 2017-12-10 20:41:11 -0600
+Processing by Admin::ProjectsController#new as HTML
+  [1m[36mAdminUser Load (1.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb (187.6ms)
+Completed 200 OK in 225ms (Views: 219.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/admin/projects" for 127.0.0.1 at 2017-12-10 20:41:48 -0600
+Processing by Admin::ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mJR3csNZ5jy04VqGvzRfiZRXfeF4kjcfSYmj9iFErIapwCgnBhQ22XSHlkqxe2COEik9EJJ9skYBZtLVzWzq6w==", "project"=>{"name"=>"Angular5", "content"=>"Angular web project", "price"=>"455.99", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fc0fbd0af98 @tempfile=#<Tempfile:/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/RackMultipart20171210-5920-1ckemc7.jpeg>, @original_filename="pro7.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[image]\"; filename=\"pro7.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Project"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-5920-zb67f0.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-5920-2sb234.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-5920-2sb234.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-5920-2sb234.jpeg[0]' -auto-orient -resize "680x300>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/888d2062199b77d49fca38d35bbe4ee520171210-5920-xtw3uo'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-5920-2sb234.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-5920-2sb234.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-5920-2sb234.jpeg[0]' -auto-orient -resize "170x75>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/888d2062199b77d49fca38d35bbe4ee520171210-5920-176stba'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" WHERE ("projects"."id" IS NOT NULL) AND "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-5920-wuxc7b.jpeg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb (169.1ms)
+Completed 200 OK in 396ms (Views: 179.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/system/projects/images//original/pro7.jpeg?1512960108" for 127.0.0.1 at 2017-12-10 20:41:49 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/system/projects/images/original/pro7.jpeg"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/admin/projects" for 127.0.0.1 at 2017-12-10 20:41:58 -0600
+Processing by Admin::ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Oc+W2n4GIOWtHl09N3UZoPQwrk+nDFLkz+HIn8xkZT8Im8mPu0vwAG14kfE5Oianck7uvk3j172HDrm8IEwjUg==", "project"=>{"name"=>"Angular5", "content"=>"Angular web project", "price"=>"455"}, "commit"=>"Create Project"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" WHERE ("projects"."id" IS NOT NULL) AND "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "projects" ("name", "content", "price", "created_at", "updated_at", "slug") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Angular5"], ["content", "Angular web project"], ["price", 455], ["created_at", "2017-12-11 02:41:58.847164"], ["updated_at", "2017-12-11 02:41:58.847164"], ["slug", "angular5"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/projects/angular5
+Completed 302 Found in 74ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/admin/projects/angular5" for 127.0.0.1 at 2017-12-10 20:41:58 -0600
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb (240.1ms)
+Completed 200 OK in 263ms (Views: 257.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/projects/angular5/edit" for 127.0.0.1 at 2017-12-10 20:42:05 -0600
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/edit.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/edit.html.arb (179.8ms)
+Completed 200 OK in 207ms (Views: 202.0ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/admin/projects/angular5" for 127.0.0.1 at 2017-12-10 20:42:13 -0600
+Processing by Admin::ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xF9GXoLJ3ZrFEk70DEGc2iFBuQZ7+hx9DHj/uHtEPDX1CxkLR4QNfwV0gjgCDqPdpz/595EVmSREl46bl2x6WA==", "project"=>{"name"=>"Angular5", "content"=>"Angular web project", "price"=>"455", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fc0fbf5d5e8 @tempfile=#<Tempfile:/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/RackMultipart20171210-5920-7ts5pi.jpeg>, @original_filename="pro5.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[image]\"; filename=\"pro5.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Project", "id"=>"angular5"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/02aa5e2f3483dbdb52206a06414d439520171210-5920-1bz175j.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/02aa5e2f3483dbdb52206a06414d439520171210-5920-1luvipg.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/02aa5e2f3483dbdb52206a06414d439520171210-5920-1luvipg.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/02aa5e2f3483dbdb52206a06414d439520171210-5920-1luvipg.jpeg[0]' -auto-orient -resize "680x300>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/033d64a072c9a03bc63abd41f4334c2720171210-5920-rp07fb'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/02aa5e2f3483dbdb52206a06414d439520171210-5920-1luvipg.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/02aa5e2f3483dbdb52206a06414d439520171210-5920-1luvipg.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/02aa5e2f3483dbdb52206a06414d439520171210-5920-1luvipg.jpeg[0]' -auto-orient -resize "170x75>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/033d64a072c9a03bc63abd41f4334c2720171210-5920-1b3yv46'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/02aa5e2f3483dbdb52206a06414d439520171210-5920-p31883.jpeg'
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "projects" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "projects"."id" = $6[0m  [["image_file_name", "pro5.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 13529], ["image_updated_at", "2017-12-11 02:42:13.980846"], ["updated_at", "2017-12-11 02:42:14.139743"], ["id", 4]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/projects/angular5
+Completed 302 Found in 249ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/admin/projects/angular5" for 127.0.0.1 at 2017-12-10 20:42:14 -0600
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb (189.3ms)
+Completed 200 OK in 205ms (Views: 201.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/projects/1" for 127.0.0.1 at 2017-12-10 20:42:18 -0600
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "1"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb (123.8ms)
+Completed 200 OK in 157ms (Views: 152.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/projects/web-design/edit" for 127.0.0.1 at 2017-12-10 20:42:32 -0600
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"web-design"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "web-design"], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/edit.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/edit.html.arb (184.2ms)
+Completed 200 OK in 211ms (Views: 205.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:42:46 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.1ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 315ms (Views: 309.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-10 20:42:50 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (4.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT AVG("reviews"."star") FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (4.8ms)
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reviews/_index.html.erb (10.9ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."star") FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  Rendered project/show.html.erb within layouts/application (71.0ms)
+  Rendered shared/_nav.html.erb (1.5ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 346ms (Views: 316.9ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/project/react-and-angular-project/task/online-tutorial" for 127.0.0.1 at 2017-12-10 20:43:03 -0600
+Processing by TaskController#show as HTML
+  Parameters: {"project_id"=>"react-and-angular-project", "id"=>"online-tutorial"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mTask Load (13.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 AND "tasks"."slug" = $2 ORDER BY "tasks"."tag" ASC LIMIT $3[0m  [["project_id", 3], ["slug", "online-tutorial"], ["LIMIT", 1]]
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 AND (tag > 'React3' AND header = 'f') ORDER BY "tasks"."tag" ASC LIMIT $2[0m  [["project_id", 3], ["LIMIT", 1]]
+  [1m[36mTask Load (7.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 AND (tag < 'React3' AND header = 'f') ORDER BY "tasks"."tag" DESC LIMIT $2[0m  [["project_id", 3], ["LIMIT", 1]]
+  Rendering task/show.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered task/show.html.erb within layouts/application (8.0ms)
+  Rendered shared/_nav.html.erb (1.3ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 246ms (Views: 206.2ms | ActiveRecord: 23.8ms)
+
+
+Started GET "/project/react-and-angular-project/task/online-tutorial" for 127.0.0.1 at 2017-12-10 20:43:07 -0600
+Processing by TaskController#show as HTML
+  Parameters: {"project_id"=>"react-and-angular-project", "id"=>"online-tutorial"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mProject Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mTask Load (6.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 AND "tasks"."slug" = $2 ORDER BY "tasks"."tag" ASC LIMIT $3[0m  [["project_id", 3], ["slug", "online-tutorial"], ["LIMIT", 1]]
+  [1m[36mTask Load (8.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 AND (tag > 'React3' AND header = 'f') ORDER BY "tasks"."tag" ASC LIMIT $2[0m  [["project_id", 3], ["LIMIT", 1]]
+  [1m[36mTask Load (24.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 AND (tag < 'React3' AND header = 'f') ORDER BY "tasks"."tag" DESC LIMIT $2[0m  [["project_id", 3], ["LIMIT", 1]]
+  Rendering task/show.html.erb within layouts/application
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  Rendered task/show.html.erb within layouts/application (4.4ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 277ms (Views: 219.5ms | ActiveRecord: 43.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:43:17 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (15.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (40.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (4.9ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 372ms (Views: 351.4ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/project/angular5" for 127.0.0.1 at 2017-12-10 20:43:19 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 4], ["LIMIT", 10]]
+  [1m[36mReview Load (13.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 4], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 4]]
+  Rendered reviews/_index.html.erb (2.8ms)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 4]]
+  Rendered project/show.html.erb within layouts/application (24.1ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 261ms (Views: 227.1ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/admin/tasks" for 127.0.0.1 at 2017-12-10 20:43:45 -0600
+Processing by Admin::TasksController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "tasks" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" ORDER BY "tasks"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb (213.0ms)
+Completed 200 OK in 229ms (Views: 223.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/admin/tasks/new" for 127.0.0.1 at 2017-12-10 20:43:48 -0600
+Processing by Admin::TasksController#new as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb
+  [1m[36mProject Load (2.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb (167.2ms)
+Completed 200 OK in 188ms (Views: 181.5ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/admin/tasks" for 127.0.0.1 at 2017-12-10 20:44:17 -0600
+Processing by Admin::TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0G0dPlgcl0nkbCnQyyIZI2qd1T5BuPq9B7YwGScEewzhOUJrnVFHrCQK5RzFbSYk7OOVz6tXf+RPWUE6yyw9YQ==", "task"=>{"project_id"=>"4", "title"=>"Online One", "note"=>"Angulae Tutorial", "video"=>"dntvfw4y5h", "header"=>"0", "tag"=>"Angular5", "slug"=>""}, "commit"=>"Create Task"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: :slug
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE ("tasks"."id" IS NOT NULL) AND "tasks"."slug" = $1 LIMIT $2[0m  [["slug", "online-one"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "note", "video", "tag", "project_id", "created_at", "updated_at", "slug") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Online One"], ["note", "Angulae Tutorial"], ["video", "dntvfw4y5h"], ["tag", "Angular5"], ["project_id", 4], ["created_at", "2017-12-11 02:44:17.688218"], ["updated_at", "2017-12-11 02:44:17.688218"], ["slug", "online-one"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/tasks/online-one
+Completed 302 Found in 55ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/admin/tasks/online-one" for 127.0.0.1 at 2017-12-10 20:44:17 -0600
+Processing by Admin::TasksController#show as HTML
+  Parameters: {"id"=>"online-one"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."slug" = $1 LIMIT $2[0m  [["slug", "online-one"], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 10 AND "active_admin_comments"."namespace" = $2[0m  [["resource_type", "Task"], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = 10 AND "active_admin_comments"."namespace" = $2 LIMIT $3 OFFSET $4[0m  [["resource_type", "Task"], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb (170.2ms)
+Completed 200 OK in 187ms (Views: 182.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/project/angular5" for 127.0.0.1 at 2017-12-10 20:44:23 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 4], ["LIMIT", 10]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 4], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 4]]
+  Rendered reviews/_index.html.erb (2.2ms)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 4]]
+  Rendered project/show.html.erb within layouts/application (16.8ms)
+  Rendered shared/_nav.html.erb (1.6ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 224ms (Views: 199.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:44:58 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (4.5ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 236ms (Views: 229.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:45:00 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (15.5ms)
+  Rendered shared/_message.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 363ms (Views: 356.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-12-10 20:45:04 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R5zrDNHWc/5TNbv/RXl9CRtK6l5o9vX6vKm7JV43GOB2yLRZFJujG5NTdzNLNkIOnTSqr4IZcKP0RsoGsh9ejQ=="}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:45:04 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (5.3ms)
+  Rendered shared/_nav.html.erb (6.0ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 199ms (Views: 194.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-10 20:45:07 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.7ms)
+  Rendered shared/_nav.html.erb (1.5ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 236ms (Views: 234.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-10 20:45:10 -0600
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-10 20:45:10 -0600
+Started GET "/auth/facebook/callback?code=AQBVQe2JdWcQt8BzClzKDICYYefSDPpt1WVaFI-kbcm4xmrufAQ7b52lUyodajXNv7mgmyMOTfKbGsDlRxtjk9LUFh3yRlu3ousuNDignw0D76wUuVMGqKTkXUAh4CXk3N2RKafCeOfFIvKfDKGx_39E-UOQA_iiL7mV0h6QyjI0ps-BIaG8Ci12PwxLwKqCvZkxIy4gPeg_dyQOd_n5lX7WOV04Z0hRGG383mXDizJh4MJXaiAYaIKPK0YxDcaKiZkSsSX9FAKs6SUimZ_5n-NuNPx0HuNKcOlKOCjKbsviFuhXwj-lwzezJ3RFrimpB_0&state=e50c919513e1c1dc4b9c59f05776eb65fd9c2c9af325f941" for 127.0.0.1 at 2017-12-10 20:45:10 -0600
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBVQe2JdWcQt8BzClzKDICYYefSDPpt1WVaFI-kbcm4xmrufAQ7b52lUyodajXNv7mgmyMOTfKbGsDlRxtjk9LUFh3yRlu3ousuNDignw0D76wUuVMGqKTkXUAh4CXk3N2RKafCeOfFIvKfDKGx_39E-UOQA_iiL7mV0h6QyjI0ps-BIaG8Ci12PwxLwKqCvZkxIy4gPeg_dyQOd_n5lX7WOV04Z0hRGG383mXDizJh4MJXaiAYaIKPK0YxDcaKiZkSsSX9FAKs6SUimZ_5n-NuNPx0HuNKcOlKOCjKbsviFuhXwj-lwzezJ3RFrimpB_0", "state"=>"e50c919513e1c1dc4b9c59f05776eb65fd9c2c9af325f941"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10214609630984630"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-12-11 02:45:10.980513"], ["last_sign_in_at", "2017-12-06 22:23:15.693341"], ["sign_in_count", 3], ["updated_at", "2017-12-11 02:45:10.981444"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 20:45:10 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.1ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 172ms (Views: 168.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/project/angular5" for 127.0.0.1 at 2017-12-10 20:45:14 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 4], ["LIMIT", 10]]
+  [1m[36mReview Load (7.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 4], ["user_id", 2], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 4]]
+  Rendered reviews/_index.html.erb (1.9ms)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 4]]
+  Rendered project/show.html.erb within layouts/application (14.2ms)
+  Rendered shared/_nav.html.erb (2.0ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 308ms (Views: 280.6ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/project/angular5" for 127.0.0.1 at 2017-12-10 20:49:27 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 4], ["LIMIT", 10]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 4], ["user_id", 2], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 4]]
+  Rendered reviews/_index.html.erb (1.8ms)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 4]]
+  Rendered project/show.html.erb within layouts/application (11.0ms)
+  Rendered shared/_nav.html.erb (2.9ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 226ms (Views: 210.9ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/pay" for 127.0.0.1 at 2017-12-10 20:50:03 -0600
+Processing by ChargeController#pay as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gkE6Zka8JDZem2v6WFarwpBk2XlTVlcC291lZUt0N8W9zTSF3qiDjR0eXZvzFmTAy7IivolyyHfvoOpzHRriDg==", "stripeToken"=>"tok_BvYTL7gTQNBv6H", "stripeEmail"=>"me@saidmaadan.com", "project_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "4"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "subscriptions" ("project_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["project_id", 4], ["user_id", 2], ["created_at", "2017-12-11 02:50:05.092518"], ["updated_at", "2017-12-11 02:50:05.092518"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/project/angular5
+Completed 302 Found in 1732ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/project/angular5" for 127.0.0.1 at 2017-12-10 20:50:05 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 4], ["LIMIT", 10]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 4], ["user_id", 2], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered reviews/_form.html.erb (2.9ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 4]]
+  Rendered reviews/_index.html.erb (2.2ms)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 4]]
+  Rendered project/show.html.erb within layouts/application (19.9ms)
+  Rendered shared/_nav.html.erb (2.4ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (3.6ms)
+Completed 200 OK in 333ms (Views: 312.0ms | ActiveRecord: 4.7ms)
+
+
