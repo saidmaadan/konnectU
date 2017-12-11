@@ -16137,3 +16137,711 @@ Processing by ProjectController#show as HTML
 Completed 200 OK in 333ms (Views: 312.0ms | ActiveRecord: 4.7ms)
 
 
+Started DELETE "/logout" for 127.0.0.1 at 2017-12-10 21:48:56 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tSmQPAOdaxCu6S9efGIDvhZBIpsHkGdina03WmL6otyKpZ7fm4nMq+1sGT/XIsy8TZfZXN20+Bep0LhMNJR3Fw=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:48:56 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (37.9ms)
+  Rendered shared/_nav.html.erb (7.6ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (1.4ms)
+Completed 200 OK in 1092ms (Views: 1085.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-10 21:48:59 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (44.0ms)
+  Rendered shared/_nav.html.erb (1.4ms)
+  Rendered shared/_message.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 354ms (Views: 351.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2017-12-10 21:49:02 -0600
+Started GET "/auth/github" for 127.0.0.1 at 2017-12-10 21:49:02 -0600
+Started GET "/auth/github/callback?code=5e0e3e950b370c21dd76&state=fbd3c77924fdad0655bbbe504ba7387799b7f49b1d2074de" for 127.0.0.1 at 2017-12-10 21:49:02 -0600
+Processing by OmniauthCallbacksController#github as HTML
+  Parameters: {"code"=>"5e0e3e950b370c21dd76", "state"=>"fbd3c77924fdad0655bbbe504ba7387799b7f49b1d2074de"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "github"], ["uid", "4209788"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-12-11 03:49:03.784147"], ["last_sign_in_at", "2017-12-07 16:35:22.535581"], ["sign_in_count", 6], ["updated_at", "2017-12-11 03:49:03.785086"], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:49:03 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (4.2ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 255ms (Views: 248.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/project/angular5" for 127.0.0.1 at 2017-12-10 21:49:07 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 4], ["LIMIT", 10]]
+  [1m[36mReview Load (3.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 4], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 4]]
+  Rendered reviews/_index.html.erb (6.9ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 4]]
+  Rendered project/show.html.erb within layouts/application (45.2ms)
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_message.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 410ms (Views: 242.2ms | ActiveRecord: 28.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:50:17 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (27.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (5.5ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 499ms (Views: 492.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/project/react-and-angular-project" for 127.0.0.1 at 2017-12-10 21:50:19 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"react-and-angular-project"}
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "react-and-angular-project"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 3], ["LIMIT", 10]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 3], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (8.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT AVG("reviews"."star") FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  Rendered reviews/_form.html.erb (3.1ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered reviews/_index.html.erb (10.8ms)
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."star") FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 3]]
+  Rendered project/show.html.erb within layouts/application (120.4ms)
+  Rendered shared/_nav.html.erb (1.0ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 342ms (Views: 298.8ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/admin/projects" for 127.0.0.1 at 2017-12-10 21:50:31 -0600
+Processing by Admin::ProjectsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2017-12-10 21:50:31 -0600
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/devise/shared/_links.erb (2.0ms)
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (61.4ms)
+Completed 200 OK in 316ms (Views: 290.6ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2017-12-10 21:50:33 -0600
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OBs2lv49SEdJXuX0jwrWxjTpsmDy64MVwjW9Q9jg/WMBX+tWQqlmH9/48DUvAgKgizlYpvW1Qd5NqZyDmK3Ifw==", "admin_user"=>{"email"=>"said@maadan.me", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (1.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "said@maadan.me"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "admin_users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "admin_users"."id" = $5[0m  [["current_sign_in_at", "2017-12-11 03:50:34.072050"], ["last_sign_in_at", "2017-12-08 23:49:57.489922"], ["sign_in_count", 4], ["updated_at", "2017-12-11 03:50:34.072820"], ["id", 2]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/projects
+Completed 302 Found in 212ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/admin/projects" for 127.0.0.1 at 2017-12-10 21:50:34 -0600
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT  1 FROM "projects" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mSubscription Load (0.2ms)[0m  [1m[34mSELECT "subscriptions".* FROM "subscriptions"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/index.html.arb (248.5ms)
+Completed 200 OK in 265ms (Views: 255.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/admin/projects/new" for 127.0.0.1 at 2017-12-10 21:50:38 -0600
+Processing by Admin::ProjectsController#new as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/new.html.arb (227.4ms)
+Completed 200 OK in 255ms (Views: 250.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/admin/projects" for 127.0.0.1 at 2017-12-10 21:51:18 -0600
+Processing by Admin::ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UB+y8OHdvatNTTKZp2jD26dnQUud5iumiaxGa3Wi1AkaT/loN+GJABxP4FxtOnVFHCFUw/pIUZERaQPfJpu4EQ==", "project"=>{"name"=>"Jave Spring", "content"=>"Using Checkout and Rails\r\nQuickly integrate Checkout into your Ruby on Rails-based site to provide your users with a streamlined, mobile-ready payment experience.", "price"=>"250", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fefa3a57798 @tempfile=#<Tempfile:/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/RackMultipart20171210-14814-11ptfhl.jpeg>, @original_filename="pro7.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[image]\"; filename=\"pro7.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Project"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-14814-1ukyunf.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-14814-1f0sx19.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-14814-1f0sx19.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-14814-1f0sx19.jpeg[0]' -auto-orient -resize "680x300>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/a0ead1ecc8f4ece95d484bd3b7371de320171210-14814-atcam9'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-14814-1f0sx19.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-14814-1f0sx19.jpeg[0]'
+Command :: convert '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-14814-1f0sx19.jpeg[0]' -auto-orient -resize "170x75>" '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/a0ead1ecc8f4ece95d484bd3b7371de320171210-14814-1im723f'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" WHERE ("projects"."id" IS NOT NULL) AND "projects"."slug" = $1 LIMIT $2[0m  [["slug", "jave-spring"], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/4t/6cqp_jfj0k56bdf9zvctz3f40000gn/T/7e634b10b29b3d2f86a1753f7ea7e0de20171210-14814-1gfgqtn.jpeg'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("name", "content", "price", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "slug") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Jave Spring"], ["content", "Using Checkout and Rails\r\nQuickly integrate Checkout into your Ruby on Rails-based site to provide your users with a streamlined, mobile-ready payment experience."], ["price", 250], ["created_at", "2017-12-11 03:51:18.314498"], ["updated_at", "2017-12-11 03:51:18.314498"], ["image_file_name", "pro7.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 11199], ["image_updated_at", "2017-12-11 03:51:18.174136"], ["slug", "jave-spring"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/projects/jave-spring
+Completed 302 Found in 196ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/admin/projects/jave-spring" for 127.0.0.1 at 2017-12-10 21:51:18 -0600
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"jave-spring"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "jave-spring"], ["LIMIT", 1]]
+  Rendering /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb
+  Rendered /Users/sm/.rvm/gems/ruby-2.4.0/bundler/gems/activeadmin-da49337c38df/app/views/active_admin/resource/show.html.arb (201.0ms)
+Completed 200 OK in 215ms (Views: 211.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:51:24 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (29.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (10.7ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 328ms (Views: 321.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/project/jave-spring" for 127.0.0.1 at 2017-12-10 21:51:28 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"jave-spring"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "jave-spring"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 5], ["LIMIT", 10]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 5], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 5]]
+  Rendered reviews/_index.html.erb (4.2ms)
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 5]]
+  Rendered project/show.html.erb within layouts/application (32.3ms)
+  Rendered shared/_nav.html.erb (1.6ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 285ms (Views: 262.8ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/pay" for 127.0.0.1 at 2017-12-10 21:51:48 -0600
+Processing by ChargeController#pay as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7ptVd1WeALiKUCwvC4Dp8b+4M1yB1c3c//CChU/Q9ye8TbwbIoQMq+tt2c2Qip89c31i10C/Mu3kHkpgT8uSqw==", "stripeToken"=>"tok_BvZTR3X14mev6i", "stripeEmail"=>"said@maadan.me", "project_id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "5"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "subscriptions" ("project_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["project_id", 5], ["user_id", 3], ["created_at", "2017-12-11 03:51:49.920565"], ["updated_at", "2017-12-11 03:51:49.920565"]]
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "said@maadan.me"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 1817ms (ActiveRecord: 5.5ms)
+
+
+  
+SyntaxError (/Users/sm/code/projects/RubyOnRails/konnectU/app/mailers/my_mailer.rb:47: syntax error, unexpected ',', expecting =>
+     {"-name-" "STUDENT_NAME", "-content-": user.name},
+                              ^
+/Users/sm/code/projects/RubyOnRails/konnectU/app/mailers/my_mailer.rb:47: syntax error, unexpected '}', expecting keyword_end
+NAME", "-content-": user.name},
+                              ^
+/Users/sm/code/projects/RubyOnRails/konnectU/app/mailers/my_mailer.rb:48: syntax error, unexpected ',', expecting =>
+					{"-name-" "PROJECT_NAME", "-content-": project.name},
+					                         ^
+/Users/sm/code/projects/RubyOnRails/konnectU/app/mailers/my_mailer.rb:48: syntax error, unexpected '}', expecting keyword_end
+E", "-content-": project.name},
+                              ^
+/Users/sm/code/projects/RubyOnRails/konnectU/app/mailers/my_mailer.rb:49: syntax error, unexpected ',', expecting =>
+				{"-name-" "PROJECT_PRICE", "-content-": project.price}
+				                          ^
+/Users/sm/code/projects/RubyOnRails/konnectU/app/mailers/my_mailer.rb:49: syntax error, unexpected '}', expecting keyword_end
+", "-content-": project.price}
+                              ^
+/Users/sm/code/projects/RubyOnRails/konnectU/app/mailers/my_mailer.rb:53: syntax error, unexpected '}', expecting keyword_end
+        }
+         ^
+/Users/sm/code/projects/RubyOnRails/konnectU/app/mailers/my_mailer.rb:57: syntax error, unexpected ',', expecting keyword_end
+      },
+        ^):
+  
+app/mailers/my_mailer.rb:47: syntax error, unexpected ',', expecting =>
+app/mailers/my_mailer.rb:47: syntax error, unexpected '}', expecting keyword_end
+app/mailers/my_mailer.rb:48: syntax error, unexpected ',', expecting =>
+app/mailers/my_mailer.rb:48: syntax error, unexpected '}', expecting keyword_end
+app/mailers/my_mailer.rb:49: syntax error, unexpected ',', expecting =>
+app/mailers/my_mailer.rb:49: syntax error, unexpected '}', expecting keyword_end
+app/mailers/my_mailer.rb:53: syntax error, unexpected '}', expecting keyword_end
+app/mailers/my_mailer.rb:57: syntax error, unexpected ',', expecting keyword_end
+app/models/subscription.rb:12:in `send_receipt_email'
+app/controllers/charge_controller.rb:27:in `pay'
+Started POST "/pay" for 127.0.0.1 at 2017-12-10 21:53:18 -0600
+Processing by ChargeController#pay as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7ptVd1WeALiKUCwvC4Dp8b+4M1yB1c3c//CChU/Q9ye8TbwbIoQMq+tt2c2Qip89c31i10C/Mu3kHkpgT8uSqw==", "stripeToken"=>"tok_BvZTR3X14mev6i", "stripeEmail"=>"said@maadan.me", "project_id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "5"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1847ms (ActiveRecord: 8.8ms)
+
+
+  
+Stripe::InvalidRequestError (You cannot use a Stripe token more than once: tok_BvZTR3X14mev6i.):
+  
+app/controllers/charge_controller.rb:14:in `pay'
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:53:30 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (5.5ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 229ms (Views: 224.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/project/jave-spring" for 127.0.0.1 at 2017-12-10 21:53:34 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"jave-spring"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "jave-spring"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 5], ["LIMIT", 10]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 5], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 5]]
+  Rendered reviews/_index.html.erb (2.1ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 5]]
+  Rendered project/show.html.erb within layouts/application (12.0ms)
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 312ms (Views: 198.6ms | ActiveRecord: 33.9ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-12-10 21:53:42 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gfq/mX/cVXNk8voL2kUdExLyNcpwbCDtG6tff11vrrDLqvQBqeBh2DXwKM4QF6uNqbQgQhfCWtqDbhrLDlbCqA=="}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 58ms (ActiveRecord: 18.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:53:42 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (4.0ms)
+  Rendered shared/_nav.html.erb (2.6ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 237ms (Views: 228.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-10 21:53:45 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.0ms)
+  Rendered shared/_nav.html.erb (2.5ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 305ms (Views: 303.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-10 21:53:48 -0600
+Started GET "/auth/facebook" for 127.0.0.1 at 2017-12-10 21:53:48 -0600
+Started GET "/auth/facebook/callback?code=AQBlW48NOGv_51Ybc_2-JQgeus5JDmxNovevIUpTqi10TLRYt90HfyXFzxhhitM5_U3pdZeqOvXwzYnCOWVHRbwpT1e5gA9OcjwwB0VgVbdk5xrPeUHLZtjBaQEzP_lPvc900TPaD95IrHHC365KtLIQNeP04WDU1MTmmcj4MuEFFOkUn5xgzdrsTX4IF-6wi7UQsElt1SIQ9rzdAc5HwV1FWCnAvBv94Qo3i9rKhhug7D4kxpzJlUGa55K9RR87AuB3zinxwGBOhUMTSIjMcuHDCeTjCDY_0RVwsEyKOW_cR_FORYoPnELmOIIatT0Kj78&state=17149bb7e9c7ad48460248ff324187aafc0b8760a07d4ff8" for 127.0.0.1 at 2017-12-10 21:53:48 -0600
+Processing by OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBlW48NOGv_51Ybc_2-JQgeus5JDmxNovevIUpTqi10TLRYt90HfyXFzxhhitM5_U3pdZeqOvXwzYnCOWVHRbwpT1e5gA9OcjwwB0VgVbdk5xrPeUHLZtjBaQEzP_lPvc900TPaD95IrHHC365KtLIQNeP04WDU1MTmmcj4MuEFFOkUn5xgzdrsTX4IF-6wi7UQsElt1SIQ9rzdAc5HwV1FWCnAvBv94Qo3i9rKhhug7D4kxpzJlUGa55K9RR87AuB3zinxwGBOhUMTSIjMcuHDCeTjCDY_0RVwsEyKOW_cR_FORYoPnELmOIIatT0Kj78", "state"=>"17149bb7e9c7ad48460248ff324187aafc0b8760a07d4ff8"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10214609630984630"], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-12-11 03:53:48.810015"], ["last_sign_in_at", "2017-12-11 02:45:10.980513"], ["sign_in_count", 4], ["updated_at", "2017-12-11 03:53:48.812692"], ["id", 2]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:53:48 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (3.0ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (1.6ms)
+Completed 200 OK in 199ms (Views: 195.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/project/jave-spring" for 127.0.0.1 at 2017-12-10 21:53:51 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"jave-spring"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "jave-spring"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 5], ["LIMIT", 10]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 5], ["user_id", 2], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (17.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mReview Load (6.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 5]]
+  Rendered reviews/_index.html.erb (8.8ms)
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 5]]
+  Rendered project/show.html.erb within layouts/application (43.4ms)
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 260ms (Views: 207.4ms | ActiveRecord: 28.7ms)
+
+
+Started GET "/project/jave-spring" for 127.0.0.1 at 2017-12-10 21:54:12 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"jave-spring"}
+  [1m[36mProject Load (1.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "jave-spring"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 5], ["LIMIT", 10]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 5], ["user_id", 2], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 5]]
+  Rendered reviews/_index.html.erb (2.1ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 5]]
+  Rendered project/show.html.erb within layouts/application (13.9ms)
+  Rendered shared/_nav.html.erb (3.7ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 1094ms (Views: 948.6ms | ActiveRecord: 27.1ms)
+
+
+Started POST "/pay" for 127.0.0.1 at 2017-12-10 21:54:32 -0600
+Processing by ChargeController#pay as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J9o9Lq2+g+irZKI+Z6gPFy9++7ULRdvYKNlld21gthqgpjDvPntRmIGPKJyyLcOvnZIJaij7o5asvadqug38vQ==", "stripeToken"=>"tok_BvZWscicqGKn2N", "stripeEmail"=>"me@saidmaadan.com", "project_id"=>"5"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "5"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "subscriptions" ("project_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["project_id", 5], ["user_id", 2], ["created_at", "2017-12-11 03:54:35.065101"], ["updated_at", "2017-12-11 03:54:35.065101"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "me@saidmaadan.com"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+MyMailer#new_receipt: processed outbound mail in 578.7ms
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/project/jave-spring
+Completed 302 Found in 2952ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/project/jave-spring" for 127.0.0.1 at 2017-12-10 21:54:35 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"jave-spring"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "jave-spring"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 5], ["LIMIT", 10]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 5], ["user_id", 2], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered reviews/_form.html.erb (14.6ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 5]]
+  Rendered reviews/_index.html.erb (2.3ms)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 5]]
+  Rendered project/show.html.erb within layouts/application (37.8ms)
+  Rendered shared/_nav.html.erb (14.4ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 311ms (Views: 289.9ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-12-10 21:56:05 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V0MDdoNRHoNcT0vasd07U/8f5GdSrXuDVaR/Fl7u5lHQPw63EJTM83akwXhkWPfrTfMWuHETA83RwL0LiYOs9g=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:56:05 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (4.3ms)
+  Rendered shared/_nav.html.erb (6.3ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 176ms (Views: 172.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-12-10 21:56:08 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (22.9ms)
+  Rendered shared/_nav.html.erb (2.1ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 261ms (Views: 259.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2017-12-10 21:56:10 -0600
+Started GET "/auth/github" for 127.0.0.1 at 2017-12-10 21:56:10 -0600
+Started GET "/auth/github/callback?code=aa63362fdc72fce2bdf8&state=68116f55bf55d8a8de208db24a13cd44c4b12c5de5fc18ac" for 127.0.0.1 at 2017-12-10 21:56:11 -0600
+Processing by OmniauthCallbacksController#github as HTML
+  Parameters: {"code"=>"aa63362fdc72fce2bdf8", "state"=>"68116f55bf55d8a8de208db24a13cd44c4b12c5de5fc18ac"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "github"], ["uid", "4209788"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-12-11 03:56:11.899263"], ["last_sign_in_at", "2017-12-11 03:49:03.784147"], ["sign_in_count", 7], ["updated_at", "2017-12-11 03:56:11.900083"], ["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:56:11 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (4.3ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 213ms (Views: 209.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/project/jave-spring" for 127.0.0.1 at 2017-12-10 21:56:13 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"jave-spring"}
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "jave-spring"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 5], ["LIMIT", 10]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 5], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 5]]
+  Rendered reviews/_index.html.erb (7.5ms)
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 5]]
+  Rendered project/show.html.erb within layouts/application (27.2ms)
+  Rendered shared/_nav.html.erb (1.8ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 291ms (Views: 271.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/project/angular5" for 127.0.0.1 at 2017-12-10 21:56:27 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 4], ["LIMIT", 10]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 4], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35m (12.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 4]]
+  Rendered reviews/_index.html.erb (5.4ms)
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 4]]
+  Rendered project/show.html.erb within layouts/application (51.2ms)
+  Rendered shared/_nav.html.erb (2.6ms)
+  Rendered shared/_message.html.erb (0.6ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 277ms (Views: 237.2ms | ActiveRecord: 19.9ms)
+
+
+Started POST "/pay" for 127.0.0.1 at 2017-12-10 21:56:42 -0600
+Processing by ChargeController#pay as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zN2sfzP9TS4Jxsm34jL24E2mXUtdUJmspDAVwylgYmm9ftefTd0Dt9gb/gYRU2ThXxEQsNW+HLnPAV8E3dxMAw==", "stripeToken"=>"tok_BvZYC8Im0fITwL", "stripeEmail"=>"said@maadan.me", "project_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "4"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "subscriptions" ("project_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["project_id", 4], ["user_id", 3], ["created_at", "2017-12-11 03:56:43.602335"], ["updated_at", "2017-12-11 03:56:43.602335"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "said@maadan.me"], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+MyMailer#new_receipt: processed outbound mail in 610.4ms
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/project/angular5
+Completed 302 Found in 2022ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/project/angular5" for 127.0.0.1 at 2017-12-10 21:56:44 -0600
+Processing by ProjectController#show as HTML
+  Parameters: {"id"=>"angular5"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."slug" = $1 LIMIT $2[0m  [["slug", "angular5"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "projects" INNER JOIN "subscriptions" ON "projects"."id" = "subscriptions"."project_id" WHERE "subscriptions"."user_id" = $1 AND "projects"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "subscriptions" ON "users"."id" = "subscriptions"."user_id" WHERE "subscriptions"."project_id" = $1 ORDER BY created_at desc LIMIT $2[0m  [["project_id", 4], ["LIMIT", 10]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 AND "reviews"."user_id" = $2 LIMIT $3[0m  [["project_id", 4], ["user_id", 3], ["LIMIT", 1]]
+  Rendering project/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered reviews/_form.html.erb (1.6ms)
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."project_id" = $1 ORDER BY id desc[0m  [["project_id", 4]]
+  Rendered reviews/_index.html.erb (2.2ms)
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1 ORDER BY "tasks"."tag" ASC[0m  [["project_id", 4]]
+  Rendered project/show.html.erb within layouts/application (14.6ms)
+  Rendered shared/_nav.html.erb (2.6ms)
+  Rendered shared/_message.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (3.2ms)
+Completed 200 OK in 177ms (Views: 161.4ms | ActiveRecord: 3.9ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-12-10 21:58:34 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"50rttTok8/iea37iug0grZhQB9lcHSFeZEwnlJmttPqwPrL9tlAVSbocI2Xn2+L+5PI6JzmkRv0xSVFCgCzejw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 21:58:34 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (5.3ms)
+  Rendered shared/_nav.html.erb (2.2ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 195ms (Views: 190.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-12-10 21:58:35 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.1ms)
+  Rendered shared/_nav.html.erb (2.6ms)
+  Rendered shared/_message.html.erb (1.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 269ms (Views: 267.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2017-12-10 21:59:30 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.5ms)
+  Rendered shared/_nav.html.erb (2.5ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 215ms (Views: 213.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-12-10 22:00:03 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vXT0M6XycXu6vIVmrFWGvtHD7+ZBvT95NWRqPDpI1LB0TYr3j7TWOgJJVBfEraMlQ4ZFf9VFXkwX6UnK+xuTiQ==", "user"=>{"name"=>"Maryam M", "email"=>"saidmaadan@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "saidmaadan@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered shared/_devisemessage.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+  Rendered shared/_nav.html.erb (2.5ms)
+  Rendered shared/_message.html.erb (1.3ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 412ms (Views: 212.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/" for 127.0.0.1 at 2017-12-10 22:00:18 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QowFr116HcTufCxPEoI9R4I4dNvY0dvEGS0nZYdtvzKLtXtrdzy6hVaJ/T56ehjcEH3eQkwpuvE7oASTRj74Cw==", "user"=>{"name"=>"Maryam M", "email"=>"saydmaadan@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "saydmaadan@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "saydmaadan@gmail.com"], ["encrypted_password", "$2a$11$qd//t7po.y6z7Ktd3y2ZteO0rwvSjwcilHNfggU17twIzdRd4p9Ie"], ["created_at", "2017-12-11 04:00:18.776465"], ["updated_at", "2017-12-11 04:00:18.776465"], ["name", "Maryam M"]]
+MyMailer#new_user: processed outbound mail in 557.5ms
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2017-12-11 04:00:19.341144"], ["last_sign_in_at", "2017-12-11 04:00:19.341144"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2017-12-11 04:00:19.341804"], ["id", 4]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 740ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-12-10 22:00:19 -0600
+Processing by ProjectController#index as HTML
+  Rendering project/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered project/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered shared/_nav.html.erb (4.6ms)
+  Rendered shared/_message.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 208ms (Views: 203.6ms | ActiveRecord: 1.0ms)
+
+
